@@ -4,10 +4,10 @@ namespace HZ\raumReservierungBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class RaumReservierungController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('HZraumReservierungBundle:Default:index.html.twig');
+        return $this->render('HZraumReservierungBundle:RaumHtml:index.html.twig');
     }
 }
