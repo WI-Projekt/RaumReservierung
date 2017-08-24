@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Raums list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Raumnummer</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for raum in raums %}
+            <tr>
+                <td><a href="{{ path('admin_show', { 'id': raum.id }) }}">{{ raum.id }}</a></td>
+                <td>{{ raum.raumNummer }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_show', { 'id': raum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_edit', { 'id': raum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_new') }}">Create a new raum</a>
+        </li>
+    </ul>
+{% endblock %}
