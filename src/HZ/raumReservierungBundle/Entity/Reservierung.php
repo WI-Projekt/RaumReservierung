@@ -35,6 +35,21 @@ class Reservierung
      */
     private $endDatum;
 
+    /**
+       * @ORM\ManyToOne(targetEntity="HZ\raumReservierungBundle\Entity\Dozent")
+       * @ORM\JoinColumn(nullable=false)
+       */
+      private $dozent;
+      /**
+         * @ORM\ManyToOne(targetEntity="HZ\raumReservierungBundle\Entity\Student")
+         * @ORM\JoinColumn(nullable=false)
+         */
+        private $student;
+        /**
+           * @ORM\ManyToOne(targetEntity="HZ\raumReservierungBundle\Entity\Raum")
+           * @ORM\JoinColumn(nullable=false)
+           */
+          private $raum;
 
     /**
      * Get id
@@ -94,4 +109,3 @@ class Reservierung
         return $this->endDatum;
     }
 }
-
