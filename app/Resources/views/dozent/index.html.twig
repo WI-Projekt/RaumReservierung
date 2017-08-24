@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dozents list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Vorname</th>
+                <th>Title</th>
+                <th>Raumnummer</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dozent in dozents %}
+            <tr>
+                <td><a href="{{ path('admin_show', { 'id': dozent.id }) }}">{{ dozent.id }}</a></td>
+                <td>{{ dozent.name }}</td>
+                <td>{{ dozent.vorname }}</td>
+                <td>{{ dozent.title }}</td>
+                <td>{{ dozent.raumNummer }}</td>
+                <td>{{ dozent.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_show', { 'id': dozent.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_edit', { 'id': dozent.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_new') }}">Create a new dozent</a>
+        </li>
+    </ul>
+{% endblock %}

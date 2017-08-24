@@ -1,3 +1,21 @@
+h_zraum_reservierung_admin:
+    resource: "@HZraumReservierungBundle/Resources/config/routing/raum.yml"
+    prefix:   /admin
+
+
+h_zraum_reservierung_admin:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/reservierung.yml"
+        prefix:   /admin
+
+h_zraum_reservierung_admin:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/dozent.yml"
+        prefix:   /admin
+
+h_zraum_reservierung_admin:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/student.yml"
+        prefix:   /admin
+
+        
 h_zraum_reservierung_homepage:
     path:     /
     defaults: { _controller: HZraumReservierungBundle:RaumReservierung:index }
