@@ -1,0 +1,4 @@
+services:
+#    h_zraum_reservierung.example:
+#        class: HZ\raumReservierungBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

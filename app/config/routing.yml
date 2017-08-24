@@ -1,0 +1,7 @@
+h_zraum_reservierung:
+    resource: "@HZraumReservierungBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
