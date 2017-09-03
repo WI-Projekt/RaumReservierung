@@ -36,10 +36,10 @@ class Reservierung
     private $endDatum;
 
     /**
-       * @ORM\ManyToOne(targetEntity="HZ\raumReservierungBundle\Entity\Dozent")
-       * @ORM\JoinColumn(nullable=false)
+       * @ORM\ManyToOne(targetEntity="Dozent", inversedBy="reservierung")
+       * @ORM\JoinColumn(referencedColumnName="id", nullable=false)
        */
-      private $dozent;
+      protected $dozent;
       /**
          * @ORM\ManyToOne(targetEntity="HZ\raumReservierungBundle\Entity\Student")
          * @ORM\JoinColumn(nullable=false)
@@ -107,5 +107,77 @@ class Reservierung
     public function getEndDatum()
     {
         return $this->endDatum;
+    }
+
+    /**
+     * Set dozent
+     *
+     * @param \HZ\raumReservierungBundle\Entity\Dozent $dozent
+     *
+     * @return Reservierung
+     */
+    public function setDozent(\HZ\raumReservierungBundle\Entity\Dozent $dozent)
+    {
+        $this->dozent = $dozent;
+
+        return $this;
+    }
+
+    /**
+     * Get dozent
+     *
+     * @return \HZ\raumReservierungBundle\Entity\Dozent
+     */
+    public function getDozent()
+    {
+        return $this->dozent;
+    }
+
+    /**
+     * Set student
+     *
+     * @param \HZ\raumReservierungBundle\Entity\Student $student
+     *
+     * @return Reservierung
+     */
+    public function setStudent(\HZ\raumReservierungBundle\Entity\Student $student)
+    {
+        $this->student = $student;
+
+        return $this;
+    }
+
+    /**
+     * Get student
+     *
+     * @return \HZ\raumReservierungBundle\Entity\Student
+     */
+    public function getStudent()
+    {
+        return $this->student;
+    }
+
+    /**
+     * Set raum
+     *
+     * @param \HZ\raumReservierungBundle\Entity\Raum $raum
+     *
+     * @return Reservierung
+     */
+    public function setRaum(\HZ\raumReservierungBundle\Entity\Raum $raum)
+    {
+        $this->raum = $raum;
+
+        return $this;
+    }
+
+    /**
+     * Get raum
+     *
+     * @return \HZ\raumReservierungBundle\Entity\Raum
+     */
+    public function getRaum()
+    {
+        return $this->raum;
     }
 }

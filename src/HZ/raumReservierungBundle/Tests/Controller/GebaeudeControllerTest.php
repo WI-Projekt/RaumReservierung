@@ -4,7 +4,7 @@ namespace HZ\raumReservierungBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DozentControllerTest extends WebTestCase
+class GebaeudeControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class DozentControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/adminDozent/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /adminDozent/");
+        $crawler = $client->request('GET', '/adminGebaeude/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /adminGebaeude/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'hz_raumreservierungbundle_dozent[field_name]'  => 'Test',
+            'hz_raumreservierungbundle_gebaeude[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class DozentControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'hz_raumreservierungbundle_dozent[field_name]'  => 'Foo',
+            'hz_raumreservierungbundle_gebaeude[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

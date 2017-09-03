@@ -1,21 +1,50 @@
-h_zraum_reservierung_admin:
-    resource: "@HZraumReservierungBundle/Resources/config/routing/raum.yml"
-    prefix:   /admin
+h_zraum_reservierung_adminDozent:
+    resource: "@HZraumReservierungBundle/Resources/config/routing/dozent.yml"
+    prefix:   admin/adminDozent
 
-
-h_zraum_reservierung_admin:
-        resource: "@HZraumReservierungBundle/Resources/config/routing/reservierung.yml"
-        prefix:   /admin
-
-h_zraum_reservierung_admin:
-        resource: "@HZraumReservierungBundle/Resources/config/routing/dozent.yml"
-        prefix:   /admin
-
-h_zraum_reservierung_admin:
+h_zraum_reservierung_adminStudent:
         resource: "@HZraumReservierungBundle/Resources/config/routing/student.yml"
-        prefix:   /admin
+        prefix:   admin/adminStudent
 
-        
+h_zraum_reservierung_adminRaum:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/raum.yml"
+        prefix:   admin/adminRaum
+
+h_zraum_reservierung_adminReservierung:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/reservierung.yml"
+        prefix:   admin/dashboard
+
+
+h_zraum_reservierung_adminGebaeude:
+        resource: "@HZraumReservierungBundle/Resources/config/routing/gebaeude.yml"
+        prefix:   admin/adminGebaeude
+
+
+
+
+
+
+
+
+
+
+
 h_zraum_reservierung_homepage:
     path:     /
     defaults: { _controller: HZraumReservierungBundle:RaumReservierung:index }
+
+
+h_zraum_reservierung_gebaeudeRaum:
+    path:     /gebauedeRaum/{gebaeude}
+    defaults:
+      _controller: HZraumReservierungBundle:RaumReservierung:gebauedeRaum
+
+h_zraum_reservierung_raumInfos:
+    path:     /raumInfos/{raum}
+    defaults:
+      _controller: HZraumReservierungBundle:RaumReservierung:raumInfos
+
+h_zraum_reservierung_reservierung:
+    path:     /buchen/reservierung
+    defaults:
+      _controller: HZraumReservierungBundle:RaumReservierung:reservierung

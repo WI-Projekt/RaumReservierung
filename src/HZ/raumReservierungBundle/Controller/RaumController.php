@@ -42,7 +42,7 @@ class RaumController extends Controller
             $em->persist($raum);
             $em->flush();
 
-            return $this->redirectToRoute('admin_show', array('id' => $raum->getId()));
+            return $this->redirectToRoute('adminRaum_show', array('id' => $raum->getId()));
         }
 
         return $this->render('raum/new.html.twig', array(
@@ -78,7 +78,7 @@ class RaumController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $raum->getId()));
+            return $this->redirectToRoute('adminRaum_edit', array('id' => $raum->getId()));
         }
 
         return $this->render('raum/edit.html.twig', array(
@@ -103,7 +103,7 @@ class RaumController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('adminRaum_index');
     }
 
     /**
@@ -116,7 +116,7 @@ class RaumController extends Controller
     private function createDeleteForm(Raum $raum)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $raum->getId())))
+            ->setAction($this->generateUrl('adminRaum_delete', array('id' => $raum->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

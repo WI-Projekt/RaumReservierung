@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Raums list</h1>
+    <h1>Gebaeudes list</h1>
 
     <table>
         <thead>
@@ -13,18 +13,18 @@
             </tr>
         </thead>
         <tbody>
-        {% for raum in raums %}
+        {% for gebaeude in gebaeudes %}
             <tr>
-                <td><a href="{{ path('adminRaum_show', { 'id': raum.id }) }}">{{ raum.id }}</a></td>
-                <td>{{ raum.nummer }}</td>
-                <td>{{ raum.name }}</td>
+                <td><a href="{{ path('adminGebaeude_show', { 'id': gebaeude.id }) }}">{{ gebaeude.id }}</a></td>
+                <td>{{ gebaeude.nummer }}</td>
+                <td>{{ gebaeude.name }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('adminRaum_show', { 'id': raum.id }) }}">show</a>
+                            <a href="{{ path('adminGebaeude_show', { 'id': gebaeude.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('adminRaum_edit', { 'id': raum.id }) }}">edit</a>
+                            <a href="{{ path('adminGebaeude_edit', { 'id': gebaeude.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('adminRaum_new') }}">Create a new raum</a>
+            <a href="{{ path('adminGebaeude_new') }}">Create a new gebaeude</a>
         </li>
     </ul>
 {% endblock %}

@@ -18,7 +18,7 @@
         <tbody>
         {% for dozent in dozents %}
             <tr>
-                <td><a href="{{ path('admin_show', { 'id': dozent.id }) }}">{{ dozent.id }}</a></td>
+                <td><a href="{{ path('adminDozent_show', { 'id': dozent.id }) }}">{{ dozent.id }}</a></td>
                 <td>{{ dozent.name }}</td>
                 <td>{{ dozent.vorname }}</td>
                 <td>{{ dozent.title }}</td>
@@ -27,10 +27,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_show', { 'id': dozent.id }) }}">show</a>
+                            <a href="{{ path('adminDozent_show', { 'id': dozent.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_edit', { 'id': dozent.id }) }}">edit</a>
+                            <a href="{{ path('adminDozent_edit', { 'id': dozent.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -41,7 +41,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_new') }}">Create a new dozent</a>
+            <a href="{{ path('adminDozent_new') }}">Create a new dozent</a>
         </li>
     </ul>
 {% endblock %}

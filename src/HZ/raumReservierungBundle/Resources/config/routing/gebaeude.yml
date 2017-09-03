@@ -1,0 +1,24 @@
+adminGebaeude_index:
+    path:     /
+    defaults: { _controller: "HZraumReservierungBundle:Gebaeude:index" }
+    methods:  GET
+
+adminGebaeude_show:
+    path:     /{id}/show
+    defaults: { _controller: "HZraumReservierungBundle:Gebaeude:show" }
+    methods:  GET
+
+adminGebaeude_new:
+    path:     /new
+    defaults: { _controller: "HZraumReservierungBundle:Gebaeude:new" }
+    methods:  [GET, POST]
+
+adminGebaeude_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HZraumReservierungBundle:Gebaeude:edit" }
+    methods:  [GET, POST]
+
+adminGebaeude_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HZraumReservierungBundle:Gebaeude:delete" }
+    methods:  DELETE

@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Raum Reservierung</title>
-  </head>
-  <body>
-    et je suis la
-  </body>
-</html>
+{% extends 'layoutPublic.html.twig' %}
+{% block body %}
+    Tout les gebaeude:
+{% for item in gebaeude %}
+<a href="{{ path('h_zraum_reservierung_gebaeudeRaum', {'gebaeude': item.id}) }}">
+GebaeudeName: {{item.name}}  GebaeudeNummer: {{item.nummer}}</a>
+{% endfor %}
+
+<div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+{% endblock %}

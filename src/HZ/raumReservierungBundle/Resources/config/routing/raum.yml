@@ -1,24 +1,24 @@
-admin_index:
+adminRaum_index:
     path:     /
     defaults: { _controller: "HZraumReservierungBundle:Raum:index" }
     methods:  GET
 
-admin_show:
+adminRaum_show:
     path:     /{id}/show
     defaults: { _controller: "HZraumReservierungBundle:Raum:show" }
     methods:  GET
 
-admin_new:
+adminRaum_new:
     path:     /new
     defaults: { _controller: "HZraumReservierungBundle:Raum:new" }
     methods:  [GET, POST]
 
-admin_edit:
+adminRaum_edit:
     path:     /{id}/edit
     defaults: { _controller: "HZraumReservierungBundle:Raum:edit" }
     methods:  [GET, POST]
 
-admin_delete:
+adminRaum_delete:
     path:     /{id}/delete
     defaults: { _controller: "HZraumReservierungBundle:Raum:delete" }
     methods:  DELETE

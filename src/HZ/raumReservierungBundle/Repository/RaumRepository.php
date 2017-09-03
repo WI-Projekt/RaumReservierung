@@ -10,4 +10,17 @@ namespace HZ\raumReservierungBundle\Repository;
  */
 class RaumRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function byGebaeude($gebaeude){
+
+     $qb = $this->createQueryBuilder('a');
+
+                $qb
+                ->innerJoin('a.gebaeude','c')
+                ->addSelect('c');
+
+                $qb->where($qb->expr()->in('c.id', $gebaeude));
+
+            return $qb->getQuery()->getResult();
+  }
+
 }

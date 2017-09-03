@@ -10,18 +10,22 @@
                 <td>{{ raum.id }}</td>
             </tr>
             <tr>
-                <th>Raumnummer</th>
-                <td>{{ raum.raumNummer }}</td>
+                <th>Nummer</th>
+                <td>{{ raum.nummer }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ raum.name }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('admin_index') }}">Back to the list</a>
+            <a href="{{ path('adminRaum_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('admin_edit', { 'id': raum.id }) }}">Edit</a>
+            <a href="{{ path('adminRaum_edit', { 'id': raum.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

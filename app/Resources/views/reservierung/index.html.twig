@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
     <h1>Reservierungs list</h1>
@@ -15,16 +15,16 @@
         <tbody>
         {% for reservierung in reservierungs %}
             <tr>
-                <td><a href="{{ path('admin_show', { 'id': reservierung.id }) }}">{{ reservierung.id }}</a></td>
+                <td><a href="{{ path('adminReservierung_show', { 'id': reservierung.id }) }}">{{ reservierung.id }}</a></td>
                 <td>{% if reservierung.startDatum %}{{ reservierung.startDatum|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if reservierung.endDatum %}{{ reservierung.endDatum|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_show', { 'id': reservierung.id }) }}">show</a>
+                            <a href="{{ path('adminReservierung_show', { 'id': reservierung.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_edit', { 'id': reservierung.id }) }}">edit</a>
+                            <a href="{{ path('adminReservierung_edit', { 'id': reservierung.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_new') }}">Create a new reservierung</a>
+            <a href="{{ path('adminReservierung_new') }}">Create a new reservierung</a>
         </li>
     </ul>
 {% endblock %}

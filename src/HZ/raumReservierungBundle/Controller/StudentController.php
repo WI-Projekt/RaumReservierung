@@ -42,7 +42,7 @@ class StudentController extends Controller
             $em->persist($student);
             $em->flush();
 
-            return $this->redirectToRoute('admin_show', array('id' => $student->getId()));
+            return $this->redirectToRoute('adminStudent_show', array('id' => $student->getId()));
         }
 
         return $this->render('student/new.html.twig', array(
@@ -78,7 +78,7 @@ class StudentController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $student->getId()));
+            return $this->redirectToRoute('adminStudent_edit', array('id' => $student->getId()));
         }
 
         return $this->render('student/edit.html.twig', array(
@@ -103,7 +103,7 @@ class StudentController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('adminStudent_index');
     }
 
     /**
@@ -116,7 +116,7 @@ class StudentController extends Controller
     private function createDeleteForm(Student $student)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $student->getId())))
+            ->setAction($this->generateUrl('adminStudent_delete', array('id' => $student->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -5,6 +5,7 @@ namespace HZ\raumReservierungBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class RaumType extends AbstractType
 {
@@ -13,9 +14,14 @@ class RaumType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('raumNummer');
+        $builder->add('nummer')->add('name')->add('gebaeude',EntityType::class, array(
+                                                                'class' => 'HZraumReservierungBundle:Gebaeude',
+                                                                'choice_label' => 'name',
+                                                                'multiple'=>false
+                                                              )
+                          );
     }
-    
+
     /**
      * {@inheritdoc}
      */

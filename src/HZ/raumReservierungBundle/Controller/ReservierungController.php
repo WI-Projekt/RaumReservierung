@@ -42,7 +42,7 @@ class ReservierungController extends Controller
             $em->persist($reservierung);
             $em->flush();
 
-            return $this->redirectToRoute('admin_show', array('id' => $reservierung->getId()));
+            return $this->redirectToRoute('adminReservierung_show', array('id' => $reservierung->getId()));
         }
 
         return $this->render('reservierung/new.html.twig', array(
@@ -78,7 +78,7 @@ class ReservierungController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $reservierung->getId()));
+            return $this->redirectToRoute('adminReservierung_edit', array('id' => $reservierung->getId()));
         }
 
         return $this->render('reservierung/edit.html.twig', array(
@@ -103,7 +103,7 @@ class ReservierungController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('adminReservierung_index');
     }
 
     /**
@@ -116,7 +116,7 @@ class ReservierungController extends Controller
     private function createDeleteForm(Reservierung $reservierung)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $reservierung->getId())))
+            ->setAction($this->generateUrl('adminReservierung_delete', array('id' => $reservierung->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Raum Pro Gebaeude</title>
+  </head>
+  <body>
+    liste des Raeme de se Gebaeude:
+    {% for item in raeume %}
+    <a href="{{ path('h_zraum_reservierung_raumInfos', {'raum': item.id}) }}">
+{{item.name}}
+    {% endfor %}
+  </body>
+</html>

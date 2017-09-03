@@ -16,17 +16,17 @@
         <tbody>
         {% for student in students %}
             <tr>
-                <td><a href="{{ path('admin_show', { 'id': student.id }) }}">{{ student.id }}</a></td>
+                <td><a href="{{ path('adminStudent_show', { 'id': student.id }) }}">{{ student.id }}</a></td>
                 <td>{{ student.name }}</td>
                 <td>{{ student.vorname }}</td>
                 <td>{{ student.email }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_show', { 'id': student.id }) }}">show</a>
+                            <a href="{{ path('adminStudent_show', { 'id': student.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_edit', { 'id': student.id }) }}">edit</a>
+                            <a href="{{ path('adminStudent_edit', { 'id': student.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_new') }}">Create a new student</a>
+            <a href="{{ path('adminStudent_new') }}">Create a new student</a>
         </li>
     </ul>
 {% endblock %}

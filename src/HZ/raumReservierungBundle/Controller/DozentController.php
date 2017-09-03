@@ -42,7 +42,7 @@ class DozentController extends Controller
             $em->persist($dozent);
             $em->flush();
 
-            return $this->redirectToRoute('admin_show', array('id' => $dozent->getId()));
+            return $this->redirectToRoute('adminDozent_show', array('id' => $dozent->getId()));
         }
 
         return $this->render('dozent/new.html.twig', array(
@@ -78,7 +78,7 @@ class DozentController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $dozent->getId()));
+            return $this->redirectToRoute('adminDozent_edit', array('id' => $dozent->getId()));
         }
 
         return $this->render('dozent/edit.html.twig', array(
@@ -103,7 +103,7 @@ class DozentController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('adminDozent_index');
     }
 
     /**
@@ -116,7 +116,7 @@ class DozentController extends Controller
     private function createDeleteForm(Dozent $dozent)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $dozent->getId())))
+            ->setAction($this->generateUrl('adminDozent_delete', array('id' => $dozent->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

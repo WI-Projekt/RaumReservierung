@@ -1,35 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Student</h1>
+    <h1>Gebaeude</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ student.id }}</td>
+                <td>{{ gebaeude.id }}</td>
+            </tr>
+            <tr>
+                <th>Nummer</th>
+                <td>{{ gebaeude.nummer }}</td>
             </tr>
             <tr>
                 <th>Name</th>
-                <td>{{ student.name }}</td>
-            </tr>
-            <tr>
-                <th>Vorname</th>
-                <td>{{ student.vorname }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ student.email }}</td>
+                <td>{{ gebaeude.name }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('adminStudent_index') }}">Back to the list</a>
+            <a href="{{ path('adminGebaeude_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('adminStudent_edit', { 'id': student.id }) }}">Edit</a>
+            <a href="{{ path('adminGebaeude_edit', { 'id': gebaeude.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
